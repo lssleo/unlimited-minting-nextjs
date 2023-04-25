@@ -122,6 +122,7 @@ export default function MintNft() {
                 ) : null}
                 {!isDisconnected && (
                     <Button
+                        sx={{ mt: 4, bgcolor: (theme) => theme.palette.common.black }}
                         className="font-bold text-white bg-black mt-4 self-center px-8 py-4 disabled:opacity-75"
                         disabled={isLoading}
                         onClick={handleWrite}

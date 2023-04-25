@@ -7,6 +7,17 @@
 This app is fully decentralized, with the logic from smart contracts on the blockchain and the frontend hosted on IPFS. Experience the simplicity of requesting and receiving NFTs with rarity levels from crypto-unlimited smart contracts using this intuitive frontend demo. Plus, mint Soulbound tokens as an achievement if you have the special ECDSA signature.
 Under the hood it uses Chainlink oracle to get verified random.
 
+</br>
+
+
+<div align="center">
+<img src="public/screenShot.png" alt="screen" width="900" height="auto" />
+  
+  </div>
+
+
+</br>
+
 
 ### Demo: [Unlimited Minting](https://unlimited-minting.on.fleek.co/)
 

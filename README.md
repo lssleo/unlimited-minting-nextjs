@@ -52,9 +52,6 @@ Under the hood it uses Chainlink oracle to get verified random.
  
 * <img align="left" src="https://img.shields.io/badge/Wagmi-ff3333?style=for-the-badge" />
  </span>
- 
-* <img align="left" src="https://img.shields.io/badge/WalletConnect-ff4d4d?style=for-the-badge&logo=Walletconnect&logoColor=white" />
- </span>
 
 * <img align="left" src="https://img.shields.io/badge/yarn-ff4d4d?style=for-the-badge&logo=Yarn&logoColor=white" />
  </span>

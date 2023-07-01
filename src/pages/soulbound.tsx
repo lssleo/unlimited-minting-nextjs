@@ -80,8 +80,8 @@ export default function Soulbound() {
                     soulboundsAddress={SoulboundsAddress as string}
                 />
             )}
-            <div className="bg-red-950 bg-opacity-60 w-3/6 h-min py-12 px-24 flex flex-col">
-                <h2 className="text-white font-bold text-4xl text-center mb-8">GET SECRET SOULBOUND</h2>
+            <div className="max-w-4xl mx-auto bg-red-950 bg-opacity-60 h-min py-12 px-4 sm:px-24 flex flex-col">
+                <h2 className="text-white font-bold text-2l text-center mb-8">GET SECRET SBT</h2>
                 <TextField
                     label="Signature"
                     variant="outlined"
@@ -111,10 +111,7 @@ export default function Soulbound() {
                     </Button>
                 )}
                 {isLoading || (waitingForSbt && isSuccess) ? (
-                    <Loader
-                        isLoading={true}
-                        text={'Waiting for transaction...'}
-                    />
+                    <Loader isLoading={true} text={'Waiting for transaction...'} />
                 ) : null}
             </div>
         </div>

@@ -102,23 +102,17 @@ export default function MintNft() {
                     randomAddress={RandomAddress as string}
                 />
             )}
-            <div className="bg-red-950 bg-opacity-60 w-3/6 h-min py-12 px-24 flex flex-col">
-                <h2 className="text-white font-bold text-4xl text-center mb-8">REQUEST NFT</h2>
+            <div className="max-w-4xl mx-auto bg-red-950 bg-opacity-60 h-min py-12 px-4 sm:px-24 flex flex-col">
+                <h2 className="text-white font-bold text-2l text-center mb-8">REQUEST NFT</h2>
                 <h3 className="text-white text-center mb-5">
                     {mintPrice !== null ? `Mint price: ${mintPrice}` : 'Loading...'}
                 </h3>
-                {isDisconnected && <h3 className="text-white text-center mb-5">Please, connect wallet</h3>}
-                {isLoading ? (
-                    <Loader
-                        isLoading={true}
-                        text={'Waiting for transaction...'}
-                    />
-                ) : null}
+                {isDisconnected && (
+                    <h3 className="text-white text-center mb-5">Please, connect wallet</h3>
+                )}
+                {isLoading ? <Loader isLoading={true} text={'Waiting for transaction...'} /> : null}
                 {waitingForNft && isSuccess ? (
-                    <Loader
-                        isLoading={true}
-                        text={'Waiting for minting...'}
-                    />
+                    <Loader isLoading={true} text={'Waiting for minting...'} />
                 ) : null}
                 {!isDisconnected && (
                     <Button

@@ -15,6 +15,10 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 20,
+        marginBottom: 20,
+        marhinRight: 20,
+        marginLeft: 20,
     },
     modalContent: {
         backgroundColor: '#8c0000',
@@ -64,36 +68,27 @@ const ImageModalSbt: React.FC<Props> = ({ jsonLink, tokenId, soulboundsAddress }
 
     return (
         <>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                className={classes.modalContainer}
-            >
-                <Box
-                    className={classes.modalContent}
-                    bg-black
-                >
+            <Modal open={open} onClose={handleClose} className={classes.modalContainer}>
+                <Box className={classes.modalContent} bg-black>
                     <div className={classes.imageContainer}>
-                        <img
-                            src={imageUrl}
-                            alt={`Token ${tokenId}`}
-                            className={classes.image}
-                        />
+                        <img src={imageUrl} alt={`Token ${tokenId}`} className={classes.image} />
                     </div>
                     <div className="mb-8">
                         <a
                             href={`https://testnets.opensea.io/assets/mumbai/${soulboundsAddress}/${tokenId}`}
                             target="_blank"
                         >
-                            <Button
-                                variant="outlined"
-                                color="info"
+                            <button
+                                type="button"
+                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4 mb-2"
                             >
-                                Open at OpenSea
-                            </Button>
+                                OPEN AT OPENSEA
+                            </button>
                         </a>
                     </div>
-                    <div className="font-bold text-white text-1xl text-center mb-8">WOW!!!YOU GET SUPER SECRET ACHIEVEMENT! 🎉🎉🎉</div>
+                    <div className="font-bold text-white text-1xl text-center mb-8">
+                        WOW!!!YOU GET SUPER SECRET ACHIEVEMENT! 🎉🎉🎉
+                    </div>
                 </Box>
             </Modal>
         </>

@@ -15,6 +15,10 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 20,
+        marginBottom: 20,
+        marhinRight: 20,
+        marginLeft: 20,
     },
     modalContent: {
         backgroundColor: '#8c0000',
@@ -64,45 +68,35 @@ const ImageModalNft: React.FC<Props> = ({ jsonLink, tokenId, randomAddress }) =>
 
     return (
         <>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                className={classes.modalContainer}
-            >
-                <Box
-                    className={classes.modalContent}
-                    bg-black
-                >
+            <Modal open={open} onClose={handleClose} className={classes.modalContainer}>
+                <Box className={classes.modalContent} bg-black>
                     <div className={classes.imageContainer}>
-                        <img
-                            src={imageUrl}
-                            alt={`Token ${tokenId}`}
-                            className={classes.image}
-                        />
+                        <img src={imageUrl} alt={`Token ${tokenId}`} className={classes.image} />
                     </div>
                     <div className="mb-8">
                         <a
                             href={`https://testnets.opensea.io/assets/mumbai/${randomAddress}/${tokenId}`}
                             target="_blank"
                         >
-                            <Button
-                                variant="outlined"
-                                color="info"
+                            <button
+                                type="button"
+                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4 mb-2"
                             >
-                                Open at OpenSea
-                            </Button>
+                                OPEN AT OPENSEA
+                            </button>
                         </a>
                     </div>
-                    <div className="font-bold text-white text-1xl text-center mb-8">CONGRATS! 🎉🎉🎉</div>
+                    <div className="font-bold text-white text-1xl text-center mb-8">
+                        CONGRATS! 🎉🎉🎉
+                    </div>
                     <div className={classes.buttonContainer}>
-                        <Button
-                            className="text-white bg-black"
-                            variant="contained"
+                        <button
+                            type="button"
                             onClick={handleClose}
-                            color="error"
+                            className="text-white bg-gradient-to-br from-red-700 to-black-800 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mb-2"
                         >
-                            Mint another one
-                        </Button>
+                            MINT ANOTHER ONE
+                        </button>
                     </div>
                 </Box>
             </Modal>

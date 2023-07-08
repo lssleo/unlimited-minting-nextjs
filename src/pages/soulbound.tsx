@@ -80,39 +80,40 @@ export default function Soulbound() {
                     soulboundsAddress={SoulboundsAddress as string}
                 />
             )}
-            <div className="max-w-4xl mx-auto bg-red-950 bg-opacity-60 h-min py-12 px-4 sm:px-24 flex flex-col">
-                <h2 className="text-white font-bold text-2l text-center mb-8">GET SECRET SBT</h2>
-                <TextField
-                    label="Signature"
-                    variant="outlined"
-                    color="error"
-                    value={signature}
-                    onChange={(e) => setSignature(e.target.value)}
-                    inputProps={{
-                        style: { color: 'white' },
-                        classes: { notchedOutline: 'text-white' },
-                    }}
-                    focused
-                />
-                {isDisconnected && (
-                    <h3 className="text-white text-center mt-5 mb-5">Please, connect wallet</h3>
-                )}
-
-                {!isDisconnected && (
-                    <Button
-                        sx={{ mt: 4, bgcolor: (theme) => theme.palette.common.black }}
-                        className="font-bold text-white bg-black mt-4 self-center px-8 py-4 disabled:opacity-75"
-                        disabled={isLoading}
-                        onClick={handleWrite}
-                        variant="contained"
+            <div className="flex-grow h-screen flex justify-center items-center">
+                <div className="max-w-4xl w-full sm:w-auto mx-auto bg-red-950 bg-opacity-70 h-min py-16 px-8 sm:px-24 flex flex-col">
+                    <h2 className="text-white font-bold text-2l text-center mb-8">
+                        GET SECRET SBT{' '}
+                    </h2>
+                    <TextField
+                        label="Signature"
+                        variant="outlined"
                         color="error"
-                    >
-                        SUPER SBT
-                    </Button>
-                )}
-                {isLoading || (waitingForSbt && isSuccess) ? (
-                    <Loader isLoading={true} text={'Waiting for transaction...'} />
-                ) : null}
+                        value={signature}
+                        onChange={(e) => setSignature(e.target.value)}
+                        inputProps={{
+                            style: { color: 'white' },
+                            classes: { notchedOutline: 'text-white' },
+                        }}
+                        focused
+                    />
+                    {isDisconnected && (
+                        <h3 className="text-white text-center mt-5 mb-5">Please, connect wallet</h3>
+                    )}
+
+                    {!isDisconnected && (
+                        <button
+                            type="button"
+                            onClick={handleWrite}
+                            className="text-white bg-gradient-to-br from-red-700 to-black-800 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-400 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-6 mb-2"
+                        >
+                            SUPER SBT
+                        </button>
+                    )}
+                    {isLoading || (waitingForSbt && isSuccess) ? (
+                        <Loader isLoading={true} text={'Waiting for transaction...'} />
+                    ) : null}
+                </div>
             </div>
         </div>
     )
